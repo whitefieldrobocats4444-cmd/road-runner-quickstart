@@ -130,5 +130,6 @@ public class RobotGoRoadrunnerAuto extends LinearOpMode {
 
         waitForStart();
         Pose2d initialPose = new Pose2d(10, 10, Math.toRadians(90));
+        sleep(1000);
     }
 }
