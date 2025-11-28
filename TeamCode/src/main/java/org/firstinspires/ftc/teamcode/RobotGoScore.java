@@ -28,7 +28,8 @@ public class RobotGoScore extends OpMode {
     private DcMotor FrontLeftDrive = null;
     private DcMotor RearRightDrive = null;
     private DcMotor RearLeftDrive = null;
-    private DcMotor IntakeDrive = null;
+    private DcMotor par = null;
+    private DcMotor perp = null;
     private DcMotor OuttakeDrive1 = null;
     private DcMotor OuttakeDrive2 = null;
     private IMU GyroscopeDrive = null;
@@ -41,7 +42,7 @@ public class RobotGoScore extends OpMode {
         RearLeftDrive = hardwareMap.get(DcMotor.class, "RearLeftDrive");
         FrontRightDrive = hardwareMap.get(DcMotor.class, "FrontRightDrive");
         RearRightDrive = hardwareMap.get(DcMotor.class, "RearRightDrive");
-        IntakeDrive = hardwareMap.get(DcMotor.class, "IntakeDrive");
+        perp = hardwareMap.get(DcMotor.class, "perp");
         OuttakeDrive1 = hardwareMap.get(DcMotor.class, "OuttakeDrive1");
         OuttakeDrive2 = hardwareMap.get(DcMotor.class, "OuttakeDrive2");
         GyroscopeDrive = hardwareMap.get(IMU.class, "GyroscopeDrive");
@@ -51,7 +52,7 @@ public class RobotGoScore extends OpMode {
         RearLeftDrive.setDirection(DcMotor.Direction.FORWARD);
         FrontRightDrive.setDirection(DcMotor.Direction.REVERSE);
         RearRightDrive.setDirection(DcMotor.Direction.REVERSE);
-        IntakeDrive.setDirection(DcMotor.Direction.FORWARD);
+        perp.setDirection(DcMotor.Direction.FORWARD);
         OuttakeDrive1.setDirection(DcMotor.Direction.REVERSE);
         OuttakeDrive2.setDirection(DcMotor.Direction.FORWARD);
         FeederDrive1.setDirection(CRServo.Direction.REVERSE);
@@ -95,7 +96,7 @@ public class RobotGoScore extends OpMode {
 
     public void loop() {
 
-        IntakeDrive.setPower(gamepad1.left_trigger);
+        perp.setPower(gamepad1.left_trigger);
         OuttakeDrive1.setPower(gamepad1.right_trigger * 0.8);
         OuttakeDrive2.setPower(gamepad1.right_trigger * 0.8);
 
