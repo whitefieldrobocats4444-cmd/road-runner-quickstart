@@ -144,5 +144,6 @@ public class RobotGoRoadrunnerAuto extends LinearOpMode {
                 .turn(Math.toRadians(180))
                 .lineToX(47.5)
                 .waitSeconds(3);
+        sleep(1000);
     }
 }
