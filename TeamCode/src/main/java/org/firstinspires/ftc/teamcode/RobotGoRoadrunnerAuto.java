@@ -96,21 +96,20 @@ public class RobotGoRoadrunnerAuto extends LinearOpMode {
         }
     }
 
-    Pose2d initialPose = new Pose2d(0, 0, Math.toRadians(0));
-    MecanumDrive drive = new MecanumDrive(hardwareMap, initialPose);
-    TrajectoryActionBuilder tab1 = drive.actionBuilder(initialPose)
-            .lineToYSplineHeading(33, Math.toRadians(0))
-            .waitSeconds(2)
-            .setTangent(Math.toRadians(90))
-            .lineToY(48)
-            .setTangent(Math.toRadians(0))
-            .lineToX(32)
-            .strafeTo(new Vector2d(44.5, 30))
-            .turn(Math.toRadians(180))
-            .lineToX(47.5)
-            .waitSeconds(3);
-
     public void runOpMode() {
+        Pose2d initialPose = new Pose2d(0, 0, Math.toRadians(0));
+        MecanumDrive drive = new MecanumDrive(hardwareMap, initialPose);
+        TrajectoryActionBuilder tab1 = drive.actionBuilder(initialPose)
+                .lineToYSplineHeading(33, Math.toRadians(0))
+                .waitSeconds(2)
+                .setTangent(Math.toRadians(90))
+                .lineToY(48)
+                .setTangent(Math.toRadians(0))
+                .lineToX(32)
+                .strafeTo(new Vector2d(44.5, 30))
+                .turn(Math.toRadians(180))
+                .lineToX(47.5)
+                .waitSeconds(3);
         telemetry.addData("Status", "Initialized");
         FrontLeftDrive = hardwareMap.get(DcMotor.class, "FrontLeftDrive");
         RearLeftDrive = hardwareMap.get(DcMotor.class, "RearLeftDrive");
